@@ -15,10 +15,13 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { HeaderToolbarComponent } from "./components/header-toolbar/header-toolbar.component";
 import { environment } from "src/environments/environment";
 import { AuthModule } from "ng6-md-auth";
-import { AdmissionComponent } from './pages/admission/admission.component';
-import { AdddatastudentComponent } from './pages/adddatastudent/adddatastudent.component';
-import { ChoosefilemultipleComponent } from './pages/choosefilemultiple/choosefilemultiple.component';
+import { AdmissionComponent } from "./pages/admission/admission.component";
+import { AdddatastudentComponent } from "./pages/adddatastudent/adddatastudent.component";
+import { ChoosefilemultipleComponent } from "./pages/choosefilemultiple/choosefilemultiple.component";
 
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatStepperModule } from "@angular/material/stepper";
+import { AddstudentstepperComponent } from "./pages/addstudentstepper/addstudentstepper.component";
 
 const apiSrvCfg = environment;
 @NgModule({
@@ -31,7 +34,8 @@ const apiSrvCfg = environment;
     HeaderToolbarComponent,
     AdmissionComponent,
     AdddatastudentComponent,
-    ChoosefilemultipleComponent
+    ChoosefilemultipleComponent,
+    AddstudentstepperComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +46,11 @@ const apiSrvCfg = environment;
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: "never" }),
     HttpClientModule,
     NgxSpinnerModule,
-    AuthModule.forRoot(apiSrvCfg)
+    AuthModule.forRoot(apiSrvCfg),
+    MatDialogModule,
+    MatStepperModule
   ],
+  entryComponents: [AddstudentstepperComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
