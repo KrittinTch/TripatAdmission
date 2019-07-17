@@ -1,3 +1,21 @@
-<p>
-  admission works!
-</p>
+<div class="row" *ngIf="students.length === 0">
+<img src="https://image.flaticon.com/icons/svg/1621/1621997.svg" class="btn-addnewbig" (click)="openDialog()">
+</div>
+
+<div class="row" *ngIf="students.length > 0">
+  <div class="col-12">
+    <table *ngIf="students.length > 0">
+      <thead style="background-color: #bbcbfe;">
+        <tr style="font-size: 16px ; text-align: center">
+          <th style="text-align: center">ชื่อ-สกุล</th>
+          <th style="text-align: center">เลขประจำตัวประชาชน</th>
+          <th style="text-align: center">เบอร์โทรติดต่อ</th>
+          <th style="text-align: center">สถานะผู้สมัครเรียน</th>
+          <th style="text-align: center">การจัดการ</th>
+        </tr>
+      </thead>
+      </table>
+  </div>
+</div>
+
+
