@@ -22,12 +22,32 @@
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field>
-        <input matInput placeholder="Address" formControlName="secondCtrl" required>
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+      <div class="row">
+        <div class="col-12 mt-2">
+          <app-adddatastudent></app-adddatastudent>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="btn-buttonstep2">
+          <button mat-raised-button color="accent" class="col-2" matStepperPrevious>กลับ</button>
+          <button mat-raised-button color="primary" class="col-2" matStepperNext>ถัดไป</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+      <div class="row">
+        <div class="col-12 mt-2">
+          <app-choosefilemultiple></app-choosefilemultiple>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="btn-buttonstep2">
+          <button mat-raised-button color="accent" class="col-2" matStepperPrevious>กลับ</button>
+          <button mat-raised-button color="primary" class="col-2" matStepperNext>ถัดไป</button>
+        </div>
       </div>
     </form>
   </mat-step>

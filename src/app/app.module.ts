@@ -22,6 +22,10 @@ import { ChoosefilemultipleComponent } from "./pages/choosefilemultiple/choosefi
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatStepperModule } from "@angular/material/stepper";
 import { AddstudentstepperComponent } from "./pages/addstudentstepper/addstudentstepper.component";
+import { ScrollDispatchModule } from "@angular/cdk/scrolling";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatTableModule } from "@angular/material/table";
+import { MatSelectModule } from "@angular/material/select";
 
 const apiSrvCfg = environment;
 @NgModule({
@@ -48,7 +52,12 @@ const apiSrvCfg = environment;
     NgxSpinnerModule,
     AuthModule.forRoot(apiSrvCfg),
     MatDialogModule,
-    MatStepperModule
+    MatStepperModule,
+    // tslint:disable-next-line: deprecation
+    ScrollDispatchModule,
+    MatMenuModule,
+    MatTableModule,
+    MatSelectModule
   ],
   entryComponents: [AddstudentstepperComponent],
   providers: [],
