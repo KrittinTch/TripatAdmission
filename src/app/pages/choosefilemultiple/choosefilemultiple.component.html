@@ -1,17 +1,20 @@
-<div class="col-12">
-<div class="container">
-  <img class="picfile" src="https://image.flaticon.com/icons/svg/1909/1909496.svg"
-  (click)="fileInput2.click()"alt="">
-<input hidden type="file" #fileInput2 multiple (change)="detectfile2($event)">
-</div>
+<cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+  <div class="col-12">
+    <div class="container">
+      <img class="picfile" src="https://image.flaticon.com/icons/svg/1909/1909496.svg" (click)="fileInput2.click()"
+        alt="">
+      <input hidden type="file" #fileInput2 multiple (change)="detectfile2($event)">
+    </div>
 
-<div class="filemultiple" *ngFor="let item of filemultiple">
-  <mat-icon class="icon-done">done</mat-icon>{{item.name}}
-</div> <br>
+    <div class="filemultiple" *ngFor="let item of filemultiple">
+      <mat-icon class="icon-done">done</mat-icon>{{item.name}}
+    </div> <br>
 
-<h5 class="label1">เลือกไฟล์เอกสารประกอบการสมัครเรียนอื่นๆ</h5>
-<p class="labelfileother">เช่น ใบสมัคร,สำเนาบัตรประชาชน, <br>
-  สำเนาทะเบียนบ้าน,ผลการเรียน
-</p>
-<strong class="notation">***หมายเหตุ : สามารถเลือกไฟล์ได้มากกว่า 1 ไฟล์</strong>
-</div>
+    <h5 class="label1">เลือกไฟล์เอกสารประกอบการสมัครเรียนอื่นๆ</h5>
+    <p class="labelfileother">เช่น ใบสมัคร,สำเนาบัตรประชาชน, <br>
+      สำเนาทะเบียนบ้าน,ผลการเรียน
+    </p>
+    <strong class="notation">***หมายเหตุ : สามารถเลือกไฟล์ได้มากกว่า 1 ไฟล์</strong>
+  </div>
+  <br>
+</cdk-virtual-scroll-viewport>
