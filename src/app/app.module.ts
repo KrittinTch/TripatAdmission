@@ -24,6 +24,10 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { AddstudentstepperComponent } from "./pages/addstudentstepper/addstudentstepper.component";
 import {ScrollDispatchModule} from '@angular/cdk/scrolling'
 
+import { MatMenuModule } from "@angular/material/menu";
+import { MatTableModule } from "@angular/material/table";
+import { MatSelectModule } from "@angular/material/select";
+
 const apiSrvCfg = environment;
 @NgModule({
   declarations: [
@@ -50,7 +54,12 @@ const apiSrvCfg = environment;
     AuthModule.forRoot(apiSrvCfg),
     MatDialogModule,
     MatStepperModule,
-    ScrollDispatchModule
+ 
+    // tslint:disable-next-line: deprecation
+    ScrollDispatchModule,
+    MatMenuModule,
+    MatTableModule,
+    MatSelectModule
   ],
   entryComponents: [AddstudentstepperComponent],
   providers: [],

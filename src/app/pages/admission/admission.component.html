@@ -1,9 +1,13 @@
 <div class="row" *ngIf="students.length === 0">
-<img src="https://image.flaticon.com/icons/svg/1621/1621997.svg" class="btn-addnewbig" (click)="openDialog()">
+  <img src="https://image.flaticon.com/icons/svg/1621/1621997.svg" class="btn-addnewbig" (click)="openDialog()">
 </div>
 
-<div class="row" *ngIf="students.length > 0">
+<!-- <div class="row" *ngIf="students.length > 0">
   <div class="col-12">
+    <div><button mat-raised-button color="primary" (click)="openDialog()">
+        <mat-icon>add_circle_outline</mat-icon>&nbsp;เพิ่มข้อมูลผู้สมัครเรียน
+      </button>
+    </div>
     <table *ngIf="students.length > 0">
       <thead style="background-color: #bbcbfe;">
         <tr style="font-size: 16px ; text-align: center">
@@ -14,8 +18,31 @@
           <th style="text-align: center">การจัดการ</th>
         </tr>
       </thead>
-      </table>
+      <tbody *ngFor="let student of students">
+        <tr>
+          <td style="font-weight: 100; text-align: center">{{student.fullname}}</td>
+          <td style="font-weight: 100; text-align: center">{{student.Identificationnumber}}</td>
+          <td style="font-weight: 100; text-align: center">{{student.telno}}</td>
+          <td style="font-weight: 100; text-align: center">
+            <mat-select>
+              <mat-option *ngFor="let food of foods" [value]="food.value">
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </td>
+          <td style="font-weight: 100; text-align: center">
+            <button mat-raised-button color="warn">
+              <mat-icon>edit</mat-icon>&nbsp;แก้ไข
+            </button>
+            <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">
+              <mat-icon>cloud_download</mat-icon>&nbsp;ดาวน์โหลด
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>PDF</button>
+              </mat-menu>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
-
-
+</div> -->

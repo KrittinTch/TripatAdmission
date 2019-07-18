@@ -10,6 +10,10 @@ import { AddstudentstepperComponent } from "../addstudentstepper/addstudentstepp
 export class AdmissionComponent implements OnInit {
 
   students = [];
+  foods: Food[] = [
+    {value: "pass", viewValue: "ผ่าน"},
+    {value: "notpass", viewValue: "ไม่ผ่าน"}
+  ];
 
   constructor(public dialog: MatDialog) { }
 
@@ -26,4 +30,8 @@ export class AdmissionComponent implements OnInit {
     });
   }
 
+}
+export interface Food {
+  value: string;
+  viewValue: string;
 }
