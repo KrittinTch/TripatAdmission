@@ -22,6 +22,7 @@ import { ChoosefilemultipleComponent } from "./pages/choosefilemultiple/choosefi
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatStepperModule } from "@angular/material/stepper";
 import { AddstudentstepperComponent } from "./pages/addstudentstepper/addstudentstepper.component";
+import {ScrollDispatchModule} from '@angular/cdk/scrolling'
 
 const apiSrvCfg = environment;
 @NgModule({
@@ -48,7 +49,8 @@ const apiSrvCfg = environment;
     NgxSpinnerModule,
     AuthModule.forRoot(apiSrvCfg),
     MatDialogModule,
-    MatStepperModule
+    MatStepperModule,
+    ScrollDispatchModule
   ],
   entryComponents: [AddstudentstepperComponent],
   providers: [],

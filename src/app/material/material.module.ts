@@ -7,7 +7,7 @@ import {
   MatCardModule,
   MatStepperModule,
   MatMenuModule,
-  MatSnackBarModule
+  MatSnackBarModule,
 } from "@angular/material";
 import { NgModule } from "@angular/core";
 
