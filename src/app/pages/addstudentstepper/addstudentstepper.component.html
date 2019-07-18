@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="col-12">
-        <div class="btn-buttonstep2">
+        <div class="btn-buttonstep3">
           <button mat-raised-button color="accent" class="col-2" matStepperPrevious>กลับ</button>
           <button mat-raised-button color="primary" class="col-2" matStepperNext>ถัดไป</button>
         </div>
@@ -53,10 +53,16 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
+    <div class="row">
+      <div class="col-12 mt-2">
+        <app-checkdetail></app-checkdetail>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="btn-buttonstep4">
+        <button mat-raised-button color="accent" class="col-2" matStepperPrevious>กลับ</button>
+        <button mat-raised-button color="primary" class="col-2" matStepperNext>บันทึก</button>
+      </div>
     </div>
   </mat-step>
 </mat-horizontal-stepper>

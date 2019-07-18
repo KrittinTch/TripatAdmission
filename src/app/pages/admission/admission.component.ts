@@ -19,16 +19,6 @@ export class AdmissionComponent implements OnInit {
 
   ngOnInit() {
   }
-  addStudent() {
-    this.students.push(
-      {
-        fullname: "ธีระ ทับฤทธิ์",
-        Identificationnumber: "1332451006198",
-        statu: "ผ่าน",
-        telno: "0808324425",
-      }
-    );
-  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddstudentstepperComponent, {
@@ -37,7 +27,6 @@ export class AdmissionComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("openDialog");
-      this.addStudent();
     });
   }
 
