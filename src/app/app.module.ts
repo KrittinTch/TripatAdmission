@@ -27,6 +27,7 @@ import {ScrollDispatchModule} from '@angular/cdk/scrolling'
 import { MatMenuModule } from "@angular/material/menu";
 import { MatTableModule } from "@angular/material/table";
 import { MatSelectModule } from "@angular/material/select";
+import { CheckdetailComponent } from './pages/checkdetail/checkdetail.component';
 
 const apiSrvCfg = environment;
 @NgModule({
@@ -40,7 +41,8 @@ const apiSrvCfg = environment;
     AdmissionComponent,
     AdddatastudentComponent,
     ChoosefilemultipleComponent,
-    AddstudentstepperComponent
+    AddstudentstepperComponent,
+    CheckdetailComponent
   ],
   imports: [
     BrowserModule,
