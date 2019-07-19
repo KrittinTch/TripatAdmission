@@ -1,11 +1,13 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Fill out your name</ng-template>
+      <ng-template matStepLabel>แจ้งเตือน</ng-template>
       <mat-card class="example-card3">
         <mat-card-subtitle>
-          ตรวจสอบให้แน่ใจว่าคุณได้สแกนเอกสารข้อมูลการสมัครเรียนเรียบร้อยแล้ว "ใช่"หรือ"ไม่"
-          ถ้า "ใช่" อัปโหลดไฟล์ ถ้า "ไม่" กลับไปหน้าแรก
+          <strong>
+            ตรวจสอบให้แน่ใจว่าคุณได้สแกนเอกสารข้อมูลการสมัครเรียนเรียบร้อยแล้ว "ใช่"หรือ"ไม่"
+            ถ้า "ใช่" อัปโหลดไฟล์ ถ้า "ไม่" กลับไปหน้าแรก
+          </strong>
         </mat-card-subtitle>
       </mat-card>
       <div class="col-12">
@@ -21,7 +23,7 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+      <ng-template matStepLabel>กรอกข้อมูล</ng-template>
       <div class="row">
         <div class="col-12 mt-2">
           <app-adddatastudent></app-adddatastudent>
@@ -37,7 +39,7 @@
   </mat-step>
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>Fill out your address</ng-template>
+      <ng-template matStepLabel>อัปโหลดไฟล์</ng-template>
       <div class="row">
         <div class="col-12 mt-2">
           <app-choosefilemultiple></app-choosefilemultiple>
@@ -52,7 +54,7 @@
     </form>
   </mat-step>
   <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
+    <ng-template matStepLabel>ยืนยันข้อมูล</ng-template>
     <div class="row">
       <div class="col-12 mt-2">
         <app-checkdetail></app-checkdetail>
