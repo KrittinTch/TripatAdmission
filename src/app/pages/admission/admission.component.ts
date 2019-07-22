@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialog } from "@angular/material";
 import { AddstudentstepperComponent } from "../addstudentstepper/addstudentstepper.component";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-admission",
@@ -15,22 +16,34 @@ export class AdmissionComponent implements OnInit {
     {value: "notpass", viewValue: "ไม่ผ่าน"}
   ];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   ngOnInit() {
     console.log("sgvrv");
     this.getData();
   }
 
+  saveData() {
+    this.http.post("http://localhost:3000/api/students", {
+      fullname: "ttttt",
+      pid: "ddd",
+      status: "pass"
+    });
+  }
+
   getData() {
     console.log("getData");
-    this.students = [
-      {
-        fullname: "ประยุทธ จันโอชา",
-        pid: "122334567",
-        status: "ผ่าน"
-      }
-    ]
+    this.http.get("http://localhost:3000/api/students").subscribe((res: any) => {
+    console.log(res);
+    this.students = res.data;
+    });
+    // this.students = [
+    //   // {
+    //   //   fullname: "ประยุทธ จันโอชา",
+    //   //   pid: "122334567",
+    //   //   status: "ผ่าน"
+    //   // }
+    // ]
   }
 
   openDialog(): void {

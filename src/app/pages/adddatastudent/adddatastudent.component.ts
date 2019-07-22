@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adddatastudent.component.scss']
 })
 export class AdddatastudentComponent implements OnInit {
-
+  @Output() calculate: EventEmitter<number> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

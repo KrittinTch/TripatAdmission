@@ -56,7 +56,7 @@ const apiSrvCfg = environment;
     AuthModule.forRoot(apiSrvCfg),
     MatDialogModule,
     MatStepperModule,
- 
+
     // tslint:disable-next-line: deprecation
     ScrollDispatchModule,
     MatMenuModule,

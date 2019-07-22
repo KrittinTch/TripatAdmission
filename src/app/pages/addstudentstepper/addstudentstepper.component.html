@@ -1,3 +1,4 @@
+<!-- stepper1 -->
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
@@ -21,28 +22,121 @@
       </div>
     </form>
   </mat-step>
+  <!-- stepper2 -->
   <mat-step [stepControl]="secondFormGroup">
-    <form [formGroup]="secondFormGroup">
-      <ng-template matStepLabel>กรอกข้อมูล</ng-template>
-      <div class="row">
-        <div class="col-12 mt-2">
-          <app-adddatastudent></app-adddatastudent>
-        </div>
+    <ng-template matStepLabel>กรอกข้อมูล</ng-template>
+    <div class="row">
+      <div class="col-12 mt-2">
+        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+          <div class="row mt-3">
+            <div class="col-6">
+              <mat-card class="example-card">
+                <mat-card-header class="Text-title-loc">
+                  <mat-card-title>ใบสูติบัตร</mat-card-title>
+                </mat-card-header>
+
+              </mat-card>
+            </div>
+            <div class="col-6">
+              <mat-card class="example-card">
+                <mat-card-header class="Text-title-loc1">
+                  <mat-card-title>ประวัติส่วนตัว</mat-card-title>
+                </mat-card-header>
+                <div>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="เลขที่บัตรประจำตัวประชาชน" [(ngModel)]="student.pid" name="studentid">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit">
+                    <input matInput placeholder="ชื่อ-นามสกุล" name="studentfullname">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit1">
+                    <input matInput placeholder="เพศ" name="studentsex">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit">
+                    <input matInput placeholder="สัญชาติ" name="studentnationality">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit1">
+                    <input matInput placeholder="วัน/เดือน/ปีเกิด" name="studentbirthday">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit">
+                    <input matInput placeholder="สถานที่เกิด" name="studentbirthplace">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit1">
+                    <input matInput placeholder="บุตรลำดับที่" name="studentnumberson">
+                  </mat-form-field>
+                  <h5 class="h5-font">มารดา</h5>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="เลขที่บัตรประจำตัวประชาชน" name="motherid">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit">
+                    <input matInput placeholder="ชื่อ-นามสกุล" name="motherfullname">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit1">
+                    <input matInput placeholder="อายุ" name="motherage">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit">
+                    <input matInput placeholder="สัญชาติ" name="mothernationality">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit1">
+                    <input matInput placeholder="ที่อยู่" name="motheraddress">
+                  </mat-form-field>
+                  <h5 class="h5-font">บิดา</h5>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="เลขที่บัตรประจำตัวประชาชน" name="fatherid">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit">
+                    <input matInput placeholder="ชื่อ-นามสกุล" name="fatherfullname">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit1">
+                    <input matInput placeholder="อายุ" name="fatherage">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit">
+                    <input matInput placeholder="สัญชาติ" name="fathernationality">
+                  </mat-form-field>
+                  <mat-form-field class="Text-edit1" name="fatheraddress">
+                    <input matInput placeholder="ที่อยู่">
+                  </mat-form-field>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+        </cdk-virtual-scroll-viewport>
       </div>
-      <div class="col-12">
-        <div class="btn-buttonstep2">
-          <button mat-raised-button color="accent" class="col-2" matStepperPrevious>กลับ</button>
-          <button mat-raised-button color="primary" class="col-2" matStepperNext>ถัดไป</button>
-        </div>
+    </div>
+    <div class="col-12">
+      <div class="btn-buttonstep2">
+        <button mat-raised-button color="accent" class="col-2" matStepperPrevious>กลับ</button>
+        <button mat-raised-button color="primary" class="col-2" matStepperNext>ถัดไป</button>
       </div>
-    </form>
+    </div>
   </mat-step>
+  <!-- stepper3 -->
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>อัปโหลดไฟล์</ng-template>
       <div class="row">
         <div class="col-12 mt-2">
-          <app-choosefilemultiple></app-choosefilemultiple>
+          <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+            <div class="col-12">
+              <div class="container">
+                <img class="picfile" src="https://image.flaticon.com/icons/svg/1909/1909496.svg"
+                  (click)="fileInput2.click()" alt="">
+                <input hidden type="file" #fileInput2 multiple (change)="detectfile($event)">
+              </div>
+
+              <div class="filemultiple" *ngFor="let item of filemultiple">
+                <mat-icon class="icon-done">done</mat-icon>{{item.name}}
+              </div> <br>
+
+              <h5 class="label1">เลือกไฟล์เอกสารประกอบการสมัครเรียนอื่นๆ</h5>
+              <p class="labelfileother">เช่น ใบสมัคร,สำเนาบัตรประชาชน, <br>
+                สำเนาทะเบียนบ้าน,ผลการเรียน
+              </p>
+              <strong class="notation">***หมายเหตุ : สามารถเลือกไฟล์ได้มากกว่า 1 ไฟล์</strong>
+            </div>
+            <br>
+          </cdk-virtual-scroll-viewport>
+
         </div>
       </div>
       <div class="col-12">
@@ -53,11 +147,90 @@
       </div>
     </form>
   </mat-step>
+  <!-- stepper4 -->
   <mat-step>
     <ng-template matStepLabel>ยืนยันข้อมูล</ng-template>
     <div class="row">
       <div class="col-12 mt-2">
-        <app-checkdetail></app-checkdetail>
+        <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+          <div class="col-12">
+            <div class="row mt-3">
+              <mat-card>
+                <div class="col-10 datastudent">
+                  <mat-card class="example-card">
+                    <mat-card-header class="Text-title-loc1">
+                      <mat-card-title>ประวัติส่วนตัว</mat-card-title>
+                    </mat-card-header>
+                    <div>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="เลขที่บัตรประจำตัวประชาชน" name="studentid">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit">
+                        <input matInput placeholder="ชื่อ-นามสกุล" name="studentfullname">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit1">
+                        <input matInput placeholder="เพศ" name="studentsex">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit">
+                        <input matInput placeholder="สัญชาติ" name="studentnationality">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit1">
+                        <input matInput placeholder="วัน/เดือน/ปีเกิด" name="studentbirthday">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit">
+                        <input matInput placeholder="สถานที่เกิด" name="studentbirthplace">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit1">
+                        <input matInput placeholder="บุตรลำดับที่" name="studentnumberson">
+                      </mat-form-field>
+                      <h5 class="h5-font">มารดา</h5>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="เลขที่บัตรประจำตัวประชาชน" name="motherid">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit">
+                        <input matInput placeholder="ชื่อ-นามสกุล" name="motherfullname">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit1">
+                        <input matInput placeholder="อายุ" name="motherage">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit">
+                        <input matInput placeholder="สัญชาติ" name="mothernationality">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit1">
+                        <input matInput placeholder="ที่อยู่" name="motheraddress">
+                      </mat-form-field>
+                      <h5 class="h5-font">บิดา</h5>
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="เลขที่บัตรประจำตัวประชาชน" name="fatherid">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit">
+                        <input matInput placeholder="ชื่อ-นามสกุล" name="fatherfullname">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit1">
+                        <input matInput placeholder="อายุ" name="fatherage">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit">
+                        <input matInput placeholder="สัญชาติ" name="fathernationality">
+                      </mat-form-field>
+                      <mat-form-field class="Text-edit1" name="fatheraddress">
+                        <input matInput placeholder="ที่อยู่">
+                      </mat-form-field>
+                    </div>
+                  </mat-card>
+                </div>
+
+                <div class="col-12 " style="text-align: center">
+                  <br>
+                  <label class="label1"><strong>***ไฟล์เอกสารประกอบการสมัครเรียนอื่นๆ***</strong></label>
+                  <div class="filemultiple" *ngFor="let item of filemultiple">
+                    <mat-icon class="icon-done">done</mat-icon>{{item.name}}
+                  </div> <br>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+          <br>
+        </cdk-virtual-scroll-viewport>
       </div>
     </div>
     <div class="col-12">
