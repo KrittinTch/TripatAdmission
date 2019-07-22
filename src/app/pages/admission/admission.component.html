@@ -13,16 +13,15 @@
         <tr style="font-size: 16px ; text-align: center">
           <th style="text-align: center">ชื่อ-สกุล</th>
           <th style="text-align: center">เลขประจำตัวประชาชน</th>
-          <th style="text-align: center">เบอร์โทรติดต่อ</th>
           <th style="text-align: center">สถานะผู้สมัครเรียน</th>
           <th style="text-align: center">การจัดการ</th>
         </tr>
       </thead>
       <tbody *ngFor="let student of students">
         <tr>
-          <td style="font-weight: 100; text-align: center">{{student.fullname}}</td>
-          <td style="font-weight: 100; text-align: center">{{student.Identificationnumber}}</td>
-          <td style="font-weight: 100; text-align: center">{{student.telno}}</td>
+          <td style="font-weight: 100; text-align: center">{{students.fullname}}</td>
+          <td style="font-weight: 100; text-align: center">{{students.pid}}</td>
+          <td style="font-weight: 100; text-align: center">{{students.status}}</td>
           <td style="font-weight: 100; text-align: center">
             <mat-select>
               <mat-option *ngFor="let food of foods" [value]="food.value">
