@@ -18,6 +18,19 @@ export class AdmissionComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+    console.log("sgvrv");
+    this.getData();
+  }
+
+  getData() {
+    console.log("getData");
+    this.students = [
+      {
+        fullname: "ประยุทธ จันโอชา",
+        pid: "122334567",
+        status: "ผ่าน"
+      }
+    ]
   }
 
   openDialog(): void {
