@@ -19,9 +19,9 @@
       </thead>
       <tbody *ngFor="let student of students">
         <tr>
-          <td style="font-weight: 100; text-align: center">{{students.fullname}}</td>
-          <td style="font-weight: 100; text-align: center">{{students.pid}}</td>
-          <td style="font-weight: 100; text-align: center">{{students.status}}</td>
+          <td style="font-weight: 100; text-align: center">{{student.fullname}}</td>
+          <td style="font-weight: 100; text-align: center">{{student.pid}}</td>
+          <td style="font-weight: 100; text-align: center">{{student.status}}</td>
           <td style="font-weight: 100; text-align: center">
             <mat-select>
               <mat-option *ngFor="let food of foods" [value]="food.value">
